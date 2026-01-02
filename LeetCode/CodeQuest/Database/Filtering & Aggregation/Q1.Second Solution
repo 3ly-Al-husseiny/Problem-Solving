@@ -1,0 +1,5 @@
+/* Write your T-SQL query statement below */
+select top 1 customer_number -- get the first one 
+from Orders
+group by customer_number -- group by the customer number 
+order by count(order_number) desc; -- order them using the number of orders
