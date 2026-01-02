@@ -1,0 +1,7 @@
+/* Write your T-SQL query statement below */
+-- using the self join 
+-- you will use the employee as emp and as man 
+SELECT emp.name AS Employee
+FROM Employee emp
+INNER JOIN Employee man ON emp.managerId = man.id
+WHERE emp.salary > man.salary;

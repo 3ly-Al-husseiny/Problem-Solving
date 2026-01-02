@@ -1,0 +1,6 @@
+/* Write your T-SQL query statement below */
+SELECT id, movie, [description], rating
+FROM Cinema
+WHERE id % 2 = 1  --odd number
+  AND description != 'boring'  -- not boring
+ORDER BY rating DESC; -- order by rating desc
