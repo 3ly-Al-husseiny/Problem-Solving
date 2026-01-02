@@ -1,0 +1,5 @@
+--Find classes with at least 5 unique students
+SELECT class 
+FROM Courses  
+GROUP BY class  
+HAVING COUNT(DISTINCT student) >= 5;
