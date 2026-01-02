@@ -1,0 +1,7 @@
+/* Write your T-SQL query statement below */
+-- get the courses that their students more or equal than 5
+select class 
+from Courses 
+group by class 
+having count(student) >= 5 
+-- as the primary key is the student_class we can use the count() without distinct 
