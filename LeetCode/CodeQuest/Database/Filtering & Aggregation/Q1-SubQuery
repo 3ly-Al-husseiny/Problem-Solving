@@ -1,0 +1,14 @@
+/* Write your T-SQL query statement below */
+-- using subQuery 
+select customer_number
+from Orders
+group by customer_number
+having count(order_number) = 
+-- subQuery
+(
+select Max(order_count) -- the max order number
+from (
+select count(order_number) as order_count
+from Orders
+group by customer_number) as counts
+);
