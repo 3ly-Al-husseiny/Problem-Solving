@@ -1,0 +1,8 @@
+/* Write your T-SQL query statement below */
+-- will , jane , bill --> null
+-- Zack --> 1 
+-- all except the 2 and include the nulls
+SELECT [name]
+FROM Customer
+WHERE referee_id != 2 
+   OR referee_id IS NULL;  -- include the nulls
