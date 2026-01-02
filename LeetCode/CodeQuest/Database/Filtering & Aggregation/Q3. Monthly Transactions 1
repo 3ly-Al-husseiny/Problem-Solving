@@ -1,0 +1,20 @@
+/* Write your T-SQL query statement below */
+-- using the conditional aggregation 
+
+select 
+    format(trans_date, 'yyyy-MM') as [month], -- format to monthYear
+    country, 
+    count(*) as trans_count, -- cout of all the transactions
+    -- count the approved_count using the conditional aggregate instead of
+    -- the subQuery  
+    sum(case when state = 'approved' then 1 else 0 end) as approved_count,
+    -- sum the total amount
+    sum(amount) as trans_total_amount,
+    -- sum the amount of the approved trans
+    sum(case when state = 'approved' then amount else 0 end) as approved_total_amount
+
+from transactions
+-- group by the month-year then  country
+group by format(trans_date, 'yyyy-MM'), country
+-- order by month then country 
+order by [month] , country
